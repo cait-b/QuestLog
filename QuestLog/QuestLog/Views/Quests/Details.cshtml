@@ -1,0 +1,58 @@
+﻿@model QuestLog.Models.Quest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alignment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alignment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reward)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExperiencePoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExperiencePoints)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QuestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
