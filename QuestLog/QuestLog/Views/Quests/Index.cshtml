@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Total Experience</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Log New Quest", "Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +48,17 @@
             @Html.DisplayFor(modelItem => item.ExperiencePoints)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.QuestID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.QuestID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.QuestID })
+            <div class="pull-right">
+                <a href="@Url.Action("Edit", new { id = item.QuestID })" class="btn btn-warning btn-sm margin-right">
+                    <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                </a>
+                <a href="@Url.Action("Details", new { id = item.QuestID })" class="btn btn-info btn-sm margin-right">
+                    <span class="glyphicon glyphicon-bookmark"></span><span class="hidden-xs"> Details</span>
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.QuestID })" class="btn btn-danger btn-sm">
+                    <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                </a>
+            </div>
         </td>
     </tr>
 }
