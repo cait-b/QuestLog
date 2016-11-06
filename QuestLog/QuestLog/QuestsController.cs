@@ -26,7 +26,6 @@ namespace QuestLog
 
         //    // Calculate the total experience.
         //    double totalExperience = quests
-        //        .Where(e => e.Exclude == false)
         //        .Sum(e => e.Experience);
 
         //    // Determine the number of quests.
