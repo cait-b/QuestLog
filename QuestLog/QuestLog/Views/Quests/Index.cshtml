@@ -2,11 +2,46 @@
 
 @{
     ViewBag.Title = "Index";
-}
+    int experienceTotal = 0;
+    foreach (var item in Model)
+    {
+        experienceTotal = item.ExperiencePoints + experienceTotal;
+    }
+    int levelTotal = 0;
+    foreach (var item in Model)
+    {
+        levelTotal = experienceTotal/20;
+    }
+    int mainAlignment = 0;
+    foreach (var item in Model)
+    {
+        if (item.Alignment == QuestLog.Models.Quest.AlignmentSide.Evil)
+        {
+            mainAlignment -= 1;
+        }
+        else if (item.Alignment == QuestLog.Models.Quest.AlignmentSide.Good)
+        {
+            mainAlignment += 1;
+        }
+
+    }
+    string typeAlignment = "";
+    if (mainAlignment > 0)
+    {
+        typeAlignment = "Good";
+    } else if (mainAlignment == 0)
+    {
+        typeAlignment = "Neutral";
+    } else if (mainAlignment < 0)
+    {
+        typeAlignment = "Evil";
+    }
+    }
 
 <header class="jumbotron hero-spacer">
-    <h1>Level (?)</h1>
-    <p>Total Experience: (?)</p>
+    <h1>Player Level @levelTotal</h1>
+    <p>Total Experience: @experienceTotal</p>
+    <p>Alignment: @typeAlignment</p>
 </header>
 
 

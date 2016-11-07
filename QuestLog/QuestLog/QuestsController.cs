@@ -12,34 +12,6 @@ namespace QuestLog
 {
     public class QuestsController : Controller
     {
-        //TODO figure out how to refer to Database instead of Repository (see FF)
-        //private QuestsRepository _questsRepository = null;
-
-        //public QuestsController()
-        //{
-        //    _questsRepository = new QuestsRepository();
-        //}
-
-        //public ActionResult Index()
-        //{
-        //    List<Quest> quests = _questsRepository.GetQuests();
-
-        //    // Calculate the total experience.
-        //    double totalExperience = quests
-        //        .Sum(e => e.Experience);
-
-        //    // Determine the number of quests.
-        //    int numberOfQuests = quests
-        //        .Select(e => e.QuestID)
-        //        .Distinct()
-        //        .Count();
-
-        //    ViewBag.TotalExperience = totalExperience;
-        //    ViewBag.AverageQuestExperience = (totalExperience / (double)numberOfQuests);
-
-        //    return View(quests);
-        //}
-
 
         private QuestContext db = new QuestContext();
 
