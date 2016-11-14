@@ -26,6 +26,7 @@ namespace QuestLog.Models
         }
 
         public int QuestID { get; set; }
+        [Display(Name = "Quest Name")]
         public string Name { get; set; }
         public int Level { get; set; }
         public AlignmentSide Alignment { get; set; }
